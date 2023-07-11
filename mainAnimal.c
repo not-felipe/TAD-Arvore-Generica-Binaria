@@ -8,8 +8,6 @@ typedef struct animal{
     char raca[50];
     char porte[20];
     char tipo[20];
-    char classe[20];
-    char especie[50];
     int id;
 } Animal;
 
@@ -48,10 +46,6 @@ int main() {
                 scanf("%s", animal->porte);
                 printf("Digite o tipo do animal: ");
                 scanf("%s", animal->tipo);
-                printf("Digite a classe do animal: ");
-                scanf("%s", animal->classe);
-                printf("Digite a especie do animal: ");
-                scanf("%s", animal->especie);
                 printf("Digite o ID do animal: ");
                 scanf("%d", &animal->id);
                 printf("Digite a chave do pai do elemento (-1, caso seja o primeiro): ");
@@ -90,8 +84,6 @@ int main() {
                     printf("Raca: %s\n", animalEncontrado->raca);
                     printf("Porte: %s\n", animalEncontrado->porte);
                     printf("Tipo: %s\n", animalEncontrado->tipo);
-                    printf("Classe: %s\n", animalEncontrado->classe);
-                    printf("Especie: %s\n", animalEncontrado->especie);
                     printf("ID: %d\n", animalEncontrado->id);
                 }
                 system("Pause");
