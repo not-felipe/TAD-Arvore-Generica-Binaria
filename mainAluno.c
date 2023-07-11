@@ -4,12 +4,14 @@
 #include<string.h>
 
 typedef struct Aluno{
+
   int matricula;
   char nome[50];
 } aluno;
 
 void menu(){
-  printf("[1] Inserir Elemento\n");
+
+  printf("[1] Inserir Aluno\n");
   printf("[2] Verificar se um elemento existe\n");
   printf("[3] Buscar um elemento\n");
   printf("[4] Verificar se a arvore esta balanceada\n");
@@ -25,11 +27,14 @@ int main(){
   arvore* raiz = NULL;
 
   do{
+
     menu();
     scanf("%d", &option);
 
     switch(option){
+
       case 1:{
+
         int chavePai;
         char posicao;
         aluno* aluno1 = (aluno*) malloc(sizeof(aluno));
@@ -42,46 +47,70 @@ int main(){
         printf("Deseja inserir o elemento na esquerda ou na direita? (Digite 'd' para direita e 'e' para esquerda): ");
         scanf(" %c", &posicao);
         raiz = inserirElemento(raiz, aluno1, aluno1->matricula, chavePai, posicao);
+        system("Pause");
+        system("cls");
         break;
       }
       case 2:{
+
         int chave;
         printf("Digite a chave que deseja verificar: ");
         scanf("%d", &chave);
         if(existeElemento(raiz, chave)) printf("Chave %d existe!\n", chave);
         else printf("Chave %d nao existe!\n", chave);
         break;
+        system("Pause");
+        system("cls");
       }
       case 3:{
+
         int chave;
         printf("Digite a chave que deseja buscar: ");
         scanf("%d", &chave);
 
         void *elemento = buscarElemento(raiz, chave);
         if(elemento != NULL) {
+
           aluno *alunoEncontrado = (aluno*)elemento;
           printf("Informacoes do aluno:\n");
           printf("Matricula: %d\n", alunoEncontrado->matricula);
           printf("Nome: %s\n", alunoEncontrado->nome);
         }  
         break;
+        system("Pause");
+        system("cls");
       }
       case 4:
+
         if(balanceada(raiz)) printf("A arvore esta balanceada!\n");
         else printf("A arvore nao esta balanceada!\n");
+        system("Pause");
+        system("cls");
         break;
       case 5:
+
         printf("Altura da arvore: %d\n", altura(raiz));
+        system("Pause");
+        system("cls");
         break;
       case 6:
+
         imprimirEmLargura(raiz);
+        system("Pause");
+        system("cls");
         break;
       case 0:
+
         printf("Encerrando programa!\n");
         freeArvore(raiz);
+        system("Pause");
+        system("cls");
         break;
       default:
+
         printf("Opcao invalida!\n");
+        system("Pause");
+        system("cls");
         break;
     }
   }while(option != 0);
