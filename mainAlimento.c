@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 
-typedef struct {
+typedef struct alimento{
     int kcal;
     char tipoAlimento[20];
     float preco;

@@ -3,7 +3,7 @@
 #include<stdio.h>
 #include<string.h>
 
-typedef struct {
+typedef struct animal{
 
     char raca[50];
     char porte[20];
