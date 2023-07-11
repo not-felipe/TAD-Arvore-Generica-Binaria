@@ -30,20 +30,18 @@ int main(){
 
     switch(option){
       case 1:{
-        int chave, chavePai;
+        int chavePai;
         char posicao;
         aluno* aluno1 = (aluno*) malloc(sizeof(aluno));
         printf("Digite a matricula do aluno: ");
         scanf("%d", &aluno1->matricula);
         printf("Digite o nome do aluno: ");
         scanf("%s", aluno1->nome);
-        printf("Digite a chave que deseja inserir: ");
-        scanf("%d", &chave);
         printf("Digite a chave do pai do elemento (-1, caso seja o primeiro): ");
         scanf("%d", &chavePai);
         printf("Deseja inserir o elemento na esquerda ou na direita? (Digite 'd' para direita e 'e' para esquerda): ");
         scanf(" %c", &posicao);
-        raiz = inserirElemento(raiz, aluno1, chave, chavePai, posicao);
+        raiz = inserirElemento(raiz, aluno1, aluno1->matricula, chavePai, posicao);
         break;
       }
       case 2:{
