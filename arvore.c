@@ -24,15 +24,29 @@ int existeElemento(arvore *a, int chave){
   }
 }
 
-void* buscarElemento(arvore *a, int chave){
-  if(existeElemento(a, chave)){
-    printf("Chave encontrada: %d\n", chave);
-    return a->info;
-  }
-  else{
+void* buscarElemento(arvore* a, int chave) {
+  if (a == NULL) {
     printf("Chave nao encontrada na arvore\n");
     return NULL;
   }
+  
+  if (a->chave == chave) {
+    printf("Chave encontrada: %d\n", chave);
+    return a->info;
+  }
+  
+  void* encontrado = buscarElemento(a->esq, chave);
+  if (encontrado != NULL) {
+    return encontrado;
+  }
+  
+  encontrado = buscarElemento(a->dir, chave);
+  if (encontrado != NULL) {
+    return encontrado;
+  }
+  
+  printf("Chave nao encontrada na arvore\n");
+  return NULL;
 }
 
 arvore* encontrarNo(arvore* no, int chave) {
